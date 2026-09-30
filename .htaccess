@@ -1,0 +1,7 @@
+# Lets you open http://localhost/<this-folder>/ instead of .../public/
+Options -Indexes
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^$ public/ [L]
+    RewriteRule ^(?!public/)(.*)$ public/$1 [L]
+</IfModule>
